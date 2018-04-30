@@ -1,6 +1,6 @@
 {
   "name": "dezina",
-  "app_id": "",
+  "app_id": "4f07f482",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
