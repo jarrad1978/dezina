@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {ProductProvider} from '../../providers/product/product'
 
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
 })
 export class AboutPage {
-
-  constructor(public navCtrl: NavController) {
+public bestSellerProducts = [];
+  constructor(private productProvider: ProductProvider, public navCtrl: NavController) {
 
   }
 
+  ionViewDidLoad(){
+    this.productProvider.getProducts().subscribe((allProducts)=>{
+      //console.log(allProducts.filter(product=> product.bestSeller === true));
+      this.bestSellerProducts = allProducts.filter(product=> product.bestSeller === true);
+    });
+  }
 }
