@@ -5,7 +5,12 @@
 </ion-header>
 
 <ion-content padding>
-<ion-card *ngFor="let product of allProducts" (click)="goToProductDetailPage(product)">
-  <img [src]="product.image"/>
-</ion-card>
+  <ion-card *ngFor="let product of allProducts" (click)="goToProductDetailPage(product)">
+    <img [src]="product.image"/>
+  </ion-card>
+  <ion-fab right bottom>
+    <button ion-fab (click)="openFilterModal()">
+      <ion-icon name="settings"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>

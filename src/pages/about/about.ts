@@ -14,7 +14,6 @@ public bestSellerProducts = [];
 
   ionViewDidLoad(){
     this.productProvider.getProducts().subscribe((allProducts)=>{
-      //console.log(allProducts.filter(product=> product.bestSeller === true));
       this.bestSellerProducts = allProducts.filter(product=> product.bestSeller === true);
     });
   }
